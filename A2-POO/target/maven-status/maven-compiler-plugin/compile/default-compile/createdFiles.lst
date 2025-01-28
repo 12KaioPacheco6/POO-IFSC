@@ -1,0 +1,13 @@
+domain\Modelo.class
+domain\Marca.class
+domain\Motor.class
+domain\ECategoria.class
+domain\Veiculo.class
+domain\Pontuacao.class
+domain\Cor.class
+domain\IDados.class
+domain\PessoaJuridica.class
+domain\ETipoCombustivel.class
+domain\Cliente.class
+domain\PessoaFisica.class
+MainApp\MainApp.class
