@@ -1,0 +1,4 @@
+domain\Estoque.class
+domain\Produto.class
+domain\Categoria.class
+MainApp\MainApp.class
