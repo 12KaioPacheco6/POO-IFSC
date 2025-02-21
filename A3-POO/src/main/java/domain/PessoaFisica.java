@@ -37,6 +37,9 @@ public class PessoaFisica extends Cliente {
 
     @Override
     public String getDados(){
-        return "CPF: "  + cpf + " Data de nascimento:  " + dtnascimento;
+        StringBuilder dados = new StringBuilder();
+        dados.append("CPF: -------------------").append(this.cpf).append("\n");
+        dados.append("Data de Nascimento: ---------------- ").append(this.dtnascimento).append("\n");
+        return toString();
     }
 }

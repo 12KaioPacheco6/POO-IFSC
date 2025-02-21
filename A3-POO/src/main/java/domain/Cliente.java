@@ -74,28 +74,30 @@ public abstract class Cliente implements IDados{
         return this.pontuacao;
     }
 
-    //metodo para que adicionar um cliente ao veiculo adicionado
-    public void remove(Veiculo veiculo){
-        this.veiculos.remove(veiculo);
-        veiculo.setCliente(null);
+    //metodo para que associar um cliente ao veiculo adicionado
+    public void add(Veiculo veiculos){
+        this.veiculos.add(veiculos);
+        veiculos.setCliente(this);
     }
 
-    public void add(Veiculo veiculo){
-        this.veiculos.add(veiculo);
-        veiculo.setCliente(this);
+    public void remove(Veiculo veiculos){
+        this.veiculos.remove(veiculos);
+        veiculos.setCliente(null);
     }
 
-    public ArrayList <Veiculo> getVeiculo() {
-        return (ArrayList<Veiculo>) veiculos;
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
     }
 
     @Override
     public String getDados(){
-        return "ID:  " + id + 
-            "Nome: " + nome  + 
-            "Celular: " + celular + 
-            "E-mail: " + email + 
-            "Data de Cadastro: " + dtCadastro;
+        StringBuilder dados = new StringBuilder();
+        dados.append("Nome: --------------").append(this.nome).append("\n");
+        dados.append("Celular: --------------").append(this.celular).append("\n");
+        dados.append("Email: --------------").append(this.email).append("\n");
+        dados.append("Data de Cadastro: -----------------").append(this.dtCadastro).append("\n");
+        dados.append("Data Pontuação: -----------------").append(this.pontuacao).append("\n");
+        return toString();
     }
 
     @Override

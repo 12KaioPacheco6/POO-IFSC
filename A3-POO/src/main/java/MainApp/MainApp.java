@@ -64,7 +64,7 @@ public class MainApp {
 
         //medoto pra adicionar as veiculos dos clientes
         pf1.add(veic2);
-        pj3.add(veic2);
+        pj3.add(veic1);
 
 
         //método para imprimir os dados de PJ
@@ -83,20 +83,20 @@ public class MainApp {
     
     public static void print(Veiculo veiculo){
         System.out.print("\nInformaões Carros\n\n");
-        System.out.println("ID:-------------------" 
+        System.out.println("ID:-------------------"
                 + veiculo.getID());
-        System.out.println("Modelo:-------------------" 
+        System.out.println("Modelo:-------------------"
                 +veiculo.getModelo().getMarca().getNome());
-        System.out.println("Motor Potência:-------------------" 
+        System.out.println("Motor Potência:-------------------"
                 +veiculo.getModelo().getMotor().getPotencia());
-        System.out.println("Tipo de Combustível:-------------------" 
+        System.out.println("Tipo de Combustível:-------------------"
                 +veiculo.getModelo().getMotor().getCombustivel().getCombustivel());
-        System.out.println("Categoria:-------------------" 
+        System.out.println("Categoria:-------------------"
                 +veiculo.getModelo().getCategoria().getDescricao());
         System.out.println("Cor:-------------------" + veiculo.getCor().getCor());
         System.out.println("Descição:-------------------" + veiculo.getDescricao());
     }
-    
+
     public static void print(PessoaFisica cliente){
         System.out.println("\nDados do Cliente - PF\n");
         System.out.println("ID: ---------------" + cliente.getId());
@@ -107,22 +107,29 @@ public class MainApp {
         System.out.println("E-mail: ---------------" + cliente.getEmail());
         System.out.println("Pontuacao: ---------------" + cliente.getPontuacao().saldo());
         System.out.println("Data de Cadastro: ---------------" + cliente.getDtcadastro());
-        System.out.println("Dados dos Clinte - PF:-------------------" + cliente.getDados());
+
         System.out.println("Veiculos do CLiente:-------------------");
+        for (Veiculo veiculo : cliente.getVeiculos()){
+            System.out.print(veiculo);
+        }
     }
-    
+
     public static void print(PessoaJuridica cliente){
-        System.out.println("\nDados do Cliente - PJ \n");
-        System.out.println("ID: ---------------" + cliente.getId());
-        System.out.println("Nome: ---------------" + cliente.getNome());
-        System.out.println("CPF: ---------------" + cliente.getCnpj());
-        System.out.println("Data de Inscrição:---------------" + cliente.getInscricaoEstadual());
-        System.out.println("Celular: ---------------" + cliente.getCelular());
-        System.out.println("E-mail: ---------------" + cliente.getEmail());
-        System.out.println("Pontuacao: ---------------" + cliente.getPontuacao().saldo());
-        System.out.println("Data de Cadastro: ---------------" + cliente.getDtcadastro());
-        System.out.println("Dados dos Clinte - PJ:-------------------" + cliente.getDados());
-        System.out.println("Veiculos do CLiente:-------------------" + cliente.getVeiculo());
+        System.out.println("\nDados do Cliente - PJ\n").append s;
+        System.out.println( cliente.getDados());
+//        System.out.println("\nDados do Cliente - PJ \n");
+//        System.out.println("ID: ---------------" + cliente.getId());
+//        System.out.println("Nome: ---------------" + cliente.getNome());
+//        System.out.println("CPF: ---------------" + cliente.getCnpj());
+//        System.out.println("Data de Inscrição:---------------" + cliente.getInscricaoEstadual());
+//        System.out.println("Celular: ---------------" + cliente.getCelular());
+//        System.out.println("E-mail: ---------------" + cliente.getEmail());
+//        System.out.println("Pontuacao: ---------------" + cliente.getPontuacao().saldo());
+//        System.out.println("Data de Cadastro: ---------------" + cliente.getDtcadastro());
+//        System.out.println("Veiculos do CLiente:-------------------");
+//        for (Veiculo veiculo : cliente.getVeiculos()){
+//            ;
+//        }
     }
-    
+
 }

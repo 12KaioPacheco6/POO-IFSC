@@ -1,6 +1,6 @@
 package domain;
 
-public class Veiculo {
+public class Veiculo implements IDados {
     private int id;
     private String descricao;
     private Modelo modelo;
@@ -62,4 +62,18 @@ public class Veiculo {
         return cliente;
     }
 
+    @Override
+    public String getDados() {
+        StringBuilder dados = new StringBuilder();
+        dados.append("ID: " + this.id + "\n");
+        dados.append("Descrição: " + this.descricao + "\n");
+        dados.append("Modelo: " + this.modelo + "\n");
+        dados.append("Cor: " + this.cor + "\n");
+        return toString();
+    }
+
+    @Override
+    public String getDados(String observacao) {
+        return getDados() + "Observação: " + observacao;
+    }
 }
