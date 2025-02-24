@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public abstract class Cliente implements IDados{
@@ -8,7 +9,7 @@ public abstract class Cliente implements IDados{
     protected String nome;
     protected String celular;
     protected String email;
-    protected String dtCadastro;
+    protected Date dtCadastro;
     protected Pontuacao pontuacao = new Pontuacao();
     protected List<Veiculo> veiculos = new ArrayList<>();
 
@@ -21,7 +22,7 @@ public abstract class Cliente implements IDados{
         this.dtCadastro = null;
     }
     
-    public Cliente(int id, String nome, String celular, String email, String dtcadastro, Pontuacao pontuacao) {
+    public Cliente(int id, String nome, String celular, String email, Date dtcadastro, Pontuacao pontuacao) {
         this.id = id;
         this.nome = nome;
         this.celular = celular;
@@ -62,11 +63,11 @@ public abstract class Cliente implements IDados{
         this.email = email;
     }
 
-    public String getDtcadastro() {
+    public Date getDtcadastro() {
         return dtCadastro;
     }
 
-    public void setDtcadastro(String dtcadastro) {
+    public void setDtcadastro(Date dtcadastro) {
         this.dtCadastro = dtcadastro;
     }
     
@@ -77,7 +78,7 @@ public abstract class Cliente implements IDados{
     //metodo para que associar um cliente ao veiculo adicionado
     public void add(Veiculo veiculos){
         this.veiculos.add(veiculos);
-        veiculos.setCliente(this);
+        veiculos.setCliente(this); //faz referência ao veiculo relacionado com o cliente e é add na lista
     }
 
     public void remove(Veiculo veiculos){
@@ -97,7 +98,7 @@ public abstract class Cliente implements IDados{
         dados.append("Email: --------------").append(this.email).append("\n");
         dados.append("Data de Cadastro: -----------------").append(this.dtCadastro).append("\n");
         dados.append("Data Pontuação: -----------------").append(this.pontuacao).append("\n");
-        return toString();
+        return dados.toString();
     }
 
     @Override

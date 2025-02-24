@@ -1,14 +1,9 @@
 
 package MainApp;
 
-import domain.Cor;
-import domain.ECategoria;
-import domain.ETipoCombustivel;
-import domain.Marca;
-import domain.Modelo;
-import domain.PessoaFisica;
-import domain.PessoaJuridica;
-import domain.Veiculo;
+import domain.*;
+
+import java.sql.SQLOutput;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -26,7 +21,7 @@ public class MainApp {
         Veiculo veic2 = new Veiculo(31, "Médio com couro preto nos bancos.", mod1, cor2);
          
         //criação de pessoa física
-        PessoaFisica pf1 = new PessoaFisica(1,"Nina", "025.125.458-86", "24/06/2003","95 96664558", "nina@gmail.com", "24/12/2023");
+        PessoaFisica pf1 = new PessoaFisica(1,"Nina", "025.125.458-86", "24/06/2003","95 96664558", "nina@gmail.com", 2025/12/14);
         PessoaFisica pf2 = new PessoaFisica(2, "Francine", "0125.457.856-47", "18/08/2004", "91 986547586", "francine@gmail.com", "24/01/2024");
         PessoaFisica pf3 = new PessoaFisica(3, "Kaio", "930.567.903-09", "12/07/2005", "91 9857-0945", "kaio.p@aluno.ifsc.edu.br", "24/08/2024");
         
@@ -107,29 +102,28 @@ public class MainApp {
         System.out.println("E-mail: ---------------" + cliente.getEmail());
         System.out.println("Pontuacao: ---------------" + cliente.getPontuacao().saldo());
         System.out.println("Data de Cadastro: ---------------" + cliente.getDtcadastro());
-
         System.out.println("Veiculos do CLiente:-------------------");
         for (Veiculo veiculo : cliente.getVeiculos()){
-            System.out.print(veiculo);
+            System.out.println(veiculo.getDados());
         }
+
     }
 
     public static void print(PessoaJuridica cliente){
-        System.out.println("\nDados do Cliente - PJ\n").append s;
-        System.out.println( cliente.getDados());
-//        System.out.println("\nDados do Cliente - PJ \n");
-//        System.out.println("ID: ---------------" + cliente.getId());
-//        System.out.println("Nome: ---------------" + cliente.getNome());
-//        System.out.println("CPF: ---------------" + cliente.getCnpj());
-//        System.out.println("Data de Inscrição:---------------" + cliente.getInscricaoEstadual());
-//        System.out.println("Celular: ---------------" + cliente.getCelular());
-//        System.out.println("E-mail: ---------------" + cliente.getEmail());
-//        System.out.println("Pontuacao: ---------------" + cliente.getPontuacao().saldo());
-//        System.out.println("Data de Cadastro: ---------------" + cliente.getDtcadastro());
-//        System.out.println("Veiculos do CLiente:-------------------");
-//        for (Veiculo veiculo : cliente.getVeiculos()){
-//            ;
-//        }
+        System.out.println("\nDados do Cliente - PJ \n");
+        System.out.println("ID: ---------------" + cliente.getId());
+        System.out.println("Nome: ---------------" + cliente.getNome());
+        System.out.println("CPF: ---------------" + cliente.getCnpj());
+        System.out.println("Data de Inscrição:---------------" + cliente.getInscricaoEstadual());
+        System.out.println("Celular: ---------------" + cliente.getCelular());
+        System.out.println("E-mail: ---------------" + cliente.getEmail());
+        System.out.println("Pontuacao: ---------------" + cliente.getPontuacao().saldo());
+        System.out.println("Data de Cadastro: -------------" + cliente.getDtcadastro());
+        System.out.println("Veiculos do CLiente:-------------------");
+        for (Veiculo veiculo : cliente.getVeiculos()){
+            System.out.println(veiculo.getDados());
+        }
     }
-
 }
+
+

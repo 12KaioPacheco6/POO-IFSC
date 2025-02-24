@@ -6,8 +6,7 @@ public class Pontuacao {
     public Pontuacao(){
         this.quantidade = 0;
     }
-    
-    
+
     public void adicionar(int quantidade){
         this.quantidade += quantidade;
     }

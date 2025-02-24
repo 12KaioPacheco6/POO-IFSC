@@ -65,11 +65,13 @@ public class Veiculo implements IDados {
     @Override
     public String getDados() {
         StringBuilder dados = new StringBuilder();
-        dados.append("ID: " + this.id + "\n");
-        dados.append("Descrição: " + this.descricao + "\n");
-        dados.append("Modelo: " + this.modelo + "\n");
-        dados.append("Cor: " + this.cor + "\n");
-        return toString();
+        dados.append("Dados do veiculo: ").append("\n");
+        dados.append("ID: ").append(this.id).append("\n");
+        dados.append("Descricao: ").append(this.descricao).append("\n");
+        dados.append("Modelo: ").append(this.modelo.marca.getNome()).append("\n");
+        dados.append("Motor: ").append(this.modelo.getMotor().getPotencia()).append("\n");
+        dados.append("Cor: ").append(this.cor.getCor()).append("\n");
+        return dados.toString();
     }
 
     @Override
