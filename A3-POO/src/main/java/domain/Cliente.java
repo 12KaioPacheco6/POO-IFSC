@@ -1,7 +1,6 @@
 package domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public abstract class Cliente implements IDados{
@@ -9,7 +8,7 @@ public abstract class Cliente implements IDados{
     protected String nome;
     protected String celular;
     protected String email;
-    protected Date dtCadastro;
+    protected String dtCadastro;
     protected Pontuacao pontuacao = new Pontuacao();
     protected List<Veiculo> veiculos = new ArrayList<>();
 
@@ -22,7 +21,7 @@ public abstract class Cliente implements IDados{
         this.dtCadastro = null;
     }
     
-    public Cliente(int id, String nome, String celular, String email, Date dtcadastro, Pontuacao pontuacao) {
+    public Cliente(int id, String nome, String celular, String email, String dtcadastro, Pontuacao pontuacao) {
         this.id = id;
         this.nome = nome;
         this.celular = celular;
@@ -63,11 +62,11 @@ public abstract class Cliente implements IDados{
         this.email = email;
     }
 
-    public Date getDtcadastro() {
+    public String getDtcadastro() {
         return dtCadastro;
     }
 
-    public void setDtcadastro(Date dtcadastro) {
+    public void setDtcadastro(String dtcadastro) {
         this.dtCadastro = dtcadastro;
     }
     

@@ -1,12 +1,11 @@
 package domain;
 
-import java.util.Date;
 
 public class PessoaFisica extends Cliente {
     private String cpf;
     private String dtnascimento;
         
-    public PessoaFisica(int id, String nome, String cpf, String dtnascimento, String celular, String email, Date dtcadastro){
+    public PessoaFisica(int id, String nome, String cpf, String dtnascimento, String celular, String email, String dtcadastro){
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -43,6 +42,12 @@ public class PessoaFisica extends Cliente {
         dados.append(super.getDados());
         dados.append("CPF: -------------------").append(this.cpf).append("\n");
         dados.append("Data de Nascimento: ---------------- ").append(this.dtnascimento).append("\n");
-        return toString();
+        return dados.toString();
+    }
+    @Override
+    public String getDados(String observacao){
+        StringBuilder dados = new StringBuilder();
+        dados.append(getDados()).append("\n").append("Mensagem: ").append(observacao);
+        return dados.toString();
     }
 }

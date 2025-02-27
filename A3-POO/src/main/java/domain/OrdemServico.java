@@ -1,38 +1,27 @@
 package domain;
 
-import java.util.Date;
-
 public class OrdemServico {
     private long numero;
     private double total;
-    private Date agenda;
+    private String agenda;
     private double desconto;
+    private Veiculo veiculo;
 
     private EStatus status = EStatus.ABERTA;
-    private Servico servico = new Servico();
 
-    public OrdemServico() {
-        this.numero = 0;
-        this.total = 0;
-        this.agenda = null;
-        this.desconto = 0;
-        this.desconto = 0;
-    }
-
-    public OrdemServico(long numero, double total, Date agenda, double desconto) {
-        this.servico = new Servico();
+    public OrdemServico(Veiculo veiculo, long numero, double total, String agenda, double desconto, EStatus status) {
+        this.veiculo = veiculo;
         this.numero = numero;
         this.total = total;
         this.agenda = agenda;
         this.desconto = desconto;
-
     }
 
-    public Date getAgenda() {
+    public String getAgenda() {
         return agenda;
     }
 
-    public void setAgenda(Date agenda) {
+    public void setAgenda(String agenda) {
         this.agenda = agenda;
     }
 
@@ -60,10 +49,6 @@ public class OrdemServico {
         this.total = total;
     }
 
-    public Servico getServico() {
-        return servico;
-    }
-
     public EStatus getStatus() {
         return status;
     }
@@ -72,6 +57,13 @@ public class OrdemServico {
         this.status = status;
     }
 
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
 
 
 }
