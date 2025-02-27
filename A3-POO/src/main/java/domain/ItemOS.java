@@ -15,7 +15,6 @@ public class ItemOS {
         this.observacao = observacao;
     }
 
-
     public String getObservacao() {
         return observacao;
     }

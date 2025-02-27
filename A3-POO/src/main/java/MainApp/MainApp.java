@@ -3,9 +3,7 @@ package MainApp;
 
 import domain.*;
 import report.ImpressaoOS;
-
-import java.sql.SQLOutput;
-import java.time.LocalDate;
+import report.Relatorio;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -65,7 +63,7 @@ public class MainApp {
 
 
         // ====== CRIAÇÃO DE ORDENS DE SERVIÇO ======
-                OrdemServico os1 = new OrdemServico(veic1,1, 150.00, "02/02/2024", 3, EStatus.ABERTA);
+                OrdemServico os1 = new OrdemServico(veic1,1, 150.00, "02/02/2024", 150.0, EStatus.ABERTA);
                 OrdemServico os2 = new OrdemServico(veic2,2, 230.00, "05/02/2024", 2, EStatus.FECHADA);
                 OrdemServico os3 = new OrdemServico(veic5,3, 200.00, "07/02/2024", 1, EStatus.CANCELADA);
                 OrdemServico os4 = new OrdemServico(veic3,4, 100.00, "10/02/2024", 4, EStatus.ABERTA);
@@ -81,6 +79,7 @@ public class MainApp {
 
         //Add Serviço a cliente
         serv1.add(item5);
+        serv3.add(item4);
         serv2.add(item1);
         serv3.add(item2);
         serv4.add(item3);
@@ -120,10 +119,7 @@ public class MainApp {
         print(pf1);
         print(pf2);
         print(pf3);
-        //método para imprimir os dados do Veiculo
-        print(veic1);
-        print(veic2);
-
+        //método que chama para para imprimir os dados do Veiculo
         print(serv1);
         print(serv2);
         print(serv3);
@@ -132,30 +128,13 @@ public class MainApp {
 
     }
 
-    public static void print(Veiculo veiculo){
-        System.out.println(" ==== Dados do Veiculo ====");
-        System.out.println(veiculo.getDados());
-    }
 
-    public static void print(PessoaFisica cliente){
-        System.out.println(" ==== Dados do Cliente - PF ====");
-        System.out.println(cliente.getDados());
-        for (Veiculo veiculo : cliente.getVeiculos()){
-            System.out.println(veiculo.getDados());
-        }
-
-    }
-
-    public static void print(PessoaJuridica cliente){
-        System.out.println(" ==== Dados do Cliente - PJ ====");
-        System.out.println(cliente.getDados());
-        for (Veiculo veiculo : cliente.getVeiculos()){
-            System.out.println(veiculo.getDados());
-        }
+    public static void print(Cliente cliente){
+        System.out.println(Relatorio.imprimirRelatorio(cliente));
     }
 
     public static void print(Servico servico){
-//        ImpressaoOS impressao = new ImpressaoOS();
+        Servico.setPontos(10);
         System.out.println(ImpressaoOS.imprimirOS(servico));
     }
 

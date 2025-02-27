@@ -26,6 +26,8 @@ public class OrdemServico {
     }
 
     public double getDesconto() {
+        this.desconto = this.total - this.desconto;
+
         return desconto;
     }
 
@@ -64,6 +66,7 @@ public class OrdemServico {
     public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
     }
+
 
 
 }

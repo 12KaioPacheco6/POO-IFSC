@@ -92,11 +92,11 @@ public abstract class Cliente implements IDados{
     @Override
     public String getDados(){
         StringBuilder dados = new StringBuilder();
-        dados.append("Nome: --------------").append(this.nome).append("\n");
-        dados.append("Celular: --------------").append(this.celular).append("\n");
-        dados.append("Email: --------------").append(this.email).append("\n");
-        dados.append("Data de Cadastro: -----------------").append(this.dtCadastro).append("\n");
-        dados.append("Data Pontuação: -----------------").append(this.pontuacao).append("\n");
+        dados.append("Nome: ").append(this.nome).append("\n");
+        dados.append("Celular: ").append(this.celular).append("\n");
+        dados.append("Email: ").append(this.email).append("\n");
+        dados.append("Data de Cadastro: ").append(this.dtCadastro).append("\n");
+        dados.append("Pontuação: ").append(this.getPontuacao().saldo()).append("\n");
         return dados.toString();
     }
 

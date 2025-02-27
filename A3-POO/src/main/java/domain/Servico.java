@@ -7,8 +7,8 @@ public class Servico {
     private static int id;
     private String descricao;
     private double valor;
-
     private static int pontos;
+
 
     private ECategoria categoria = ECategoria.MEDIO;
     private List<ItemOS> itens = new ArrayList<>();
@@ -45,7 +45,7 @@ public class Servico {
         this.valor = valor;
     }
 
-    public static int getPontos(int pontos) {
+    public static int getPontos() {
         Servico.pontos += Servico.pontos;
         return Servico.pontos;
     }

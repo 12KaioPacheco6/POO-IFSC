@@ -40,8 +40,8 @@ public class PessoaJuridica extends Cliente{
     public String getDados(){
         StringBuilder dados = new StringBuilder();
         dados.append(super.getDados());
-        dados.append("CNPJ: -------------------- ").append(this.getCnpj()).append("\n");
-        dados.append("Inscrição Estadual: -------------------- ").append(this.getInscricaoEstadual()).append("\n");
+        dados.append("CNPJ: ").append(this.getCnpj()).append("\n");
+        dados.append("Inscrição Estadual: ").append(this.getInscricaoEstadual()).append("\n");
         return dados.toString();
     }
 
