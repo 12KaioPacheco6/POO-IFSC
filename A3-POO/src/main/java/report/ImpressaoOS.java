@@ -11,7 +11,7 @@ public class ImpressaoOS {
         imprimir.append("========================================\n");
         imprimir.append("        *** ORDEM DE SERVIÇO ***        \n");
         imprimir.append("========================================\n");
-        imprimir.append("ID do Serviço: ").append(servico.getId()).append("\n");
+        imprimir.append("ID do Serviço: ").append(servico.getId());
 
         for (ItemOS itemOS : servico.getItens()) {
             imprimir.append("\n----------------------------------------\n");
@@ -21,7 +21,6 @@ public class ImpressaoOS {
                 imprimir.append("\n").append("ID ").append(itemOS.getOrdemServico().getNumero()).append(" - ");
                 imprimir.append(os.getServico().getDescricao());
             }
-
             imprimir.append("\n----------------------------------------\n");
             imprimir.append("Veículo: ").append(itemOS.getOrdemServico().getVeiculo().getID()).append("\n");
             imprimir.append("Agendado para: ").append(itemOS.getOrdemServico().getAgenda()).append("\n");
@@ -30,14 +29,12 @@ public class ImpressaoOS {
             if (itemOS.getObservacao() != null ) {
                 imprimir.append("Observação: ").append(itemOS.getObservacao()).append("\n");
             }
-
             imprimir.append("\r\n");
             imprimir.append("Pontos do Cliente: ").append(Servico.getPontos()).append("\n");
             imprimir.append("Desconto: ").append(itemOS.getOrdemServico().getDesconto()).append("\n");
             imprimir.append("Valor: R$ ").append(String.format("%.2f", itemOS.getServico().getValor())).append("\n");
             imprimir.append("----------------------------------------\n");
         }
-
         imprimir.append("     Obrigado pela preferência!      \n");
         imprimir.append("========================================\n");
 
