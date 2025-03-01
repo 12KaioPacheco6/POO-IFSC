@@ -1,7 +1,19 @@
 
 package MainApp;
 
-import domain.*;
+import domain.Cliente;
+import domain.Cor;
+import domain.ECategoria;
+import domain.EStatus;
+import domain.ETipoCombustivel;
+import domain.ItemOS;
+import domain.Marca;
+import domain.Modelo;
+import domain.OrdemServico;
+import domain.PessoaFisica;
+import domain.PessoaJuridica;
+import domain.Servico;
+import domain.Veiculo;
 import report.ImpressaoOS;
 import report.Relatorio;
 
@@ -109,6 +121,9 @@ public class MainApp {
         //medoto pra adicionar as veiculos dos clientes
         pf1.add(veic2);
         pj3.add(veic1);
+        pj1.add(veic3);
+        pf2.add(veic4);
+        pf5.add(veic5);
 
 
         //método para imprimir os dados de PJ
@@ -137,9 +152,6 @@ public class MainApp {
         Servico.setPontos(10);
         System.out.println(ImpressaoOS.imprimirOS(servico));
     }
-
-
-
 }
 
 

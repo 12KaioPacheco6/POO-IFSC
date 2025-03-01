@@ -76,13 +76,17 @@ public abstract class Cliente implements IDados{
 
     //metodo para que associar um cliente ao veiculo adicionado
     public void add(Veiculo veiculos){
-        this.veiculos.add(veiculos);
-        veiculos.setCliente(this); //faz referência ao veiculo relacionado com o cliente e é add na lista
+        if( veiculos == null  && veiculos.getCliente() == null){
+            this.veiculos.add(veiculos);
+            veiculos.setCliente(this); //faz referência ao veiculo relacionado com o cliente e é add na lista
+        }
     }
 
     public void remove(Veiculo veiculos){
-        this.veiculos.remove(veiculos);
-        veiculos.setCliente(null);
+        if( veiculos.getCliente().veiculos != null){
+            veiculos.getCliente().veiculos.remove(veiculos);
+            veiculos.setCliente(null);
+        }
     }
 
     public List<Veiculo> getVeiculos() {
