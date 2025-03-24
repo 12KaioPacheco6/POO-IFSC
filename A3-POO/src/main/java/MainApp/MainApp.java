@@ -76,10 +76,10 @@ public class MainApp {
 
         // ====== CRIAÇÃO DE ORDENS DE SERVIÇO ======
                 OrdemServico os1 = new OrdemServico(veic1,1, 150.00, "02/02/2024", 150.0, EStatus.ABERTA);
-                OrdemServico os2 = new OrdemServico(veic2,2, 230.00, "05/02/2024", 2, EStatus.FECHADA);
-                OrdemServico os3 = new OrdemServico(veic5,3, 200.00, "07/02/2024", 1, EStatus.CANCELADA);
-                OrdemServico os4 = new OrdemServico(veic3,4, 100.00, "10/02/2024", 4, EStatus.ABERTA);
-                OrdemServico os5 = new OrdemServico(veic4,5, 180.00, "12/02/2024", 3, EStatus.FECHADA);
+                OrdemServico os2 = new OrdemServico(veic2,2, 230.00, "05/02/2024", 100.00, EStatus.FECHADA);
+                OrdemServico os3 = new OrdemServico(veic5,3, 200.00, "07/02/2024", 50.0, EStatus.CANCELADA);
+                OrdemServico os4 = new OrdemServico(veic3,4, 100.00, "10/02/2024", 40.50, EStatus.ABERTA);
+                OrdemServico os5 = new OrdemServico(veic4,5, 180.00, "12/02/2024", 55.0, EStatus.FECHADA);
 
         // ====== CRIAÇÃO DE ITENS DE ORDEM DE SERVIÇO ======
                 ItemOS item1 = new ItemOS(os1, 200.0, "Foi encontrada uma chave dentro do carro");

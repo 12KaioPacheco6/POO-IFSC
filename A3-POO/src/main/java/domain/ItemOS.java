@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.List;
-
 public class ItemOS {
     private double valor;
     private String observacao;
