@@ -1,13 +1,11 @@
 package report;
 
-import domain.Servico;
-
 // import domain.*; // Removed because the package does not exist or is not available
 public class ImpressaoOS {
-    public static String imprimirOS(Servico servico) {
+    public static String imprimirOS(Serv servico) {
         StringBuilder imprimir = new StringBuilder();
 
-        servico.setPontos(20);
+        Servico.setPontos(20);
         imprimir.append("========================================\n");
         imprimir.append("        *** ORDEM DE SERVIÇO ***        \n");
         imprimir.append("========================================\n");
